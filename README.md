@@ -12,7 +12,7 @@ Error Types and Encoding/Decoding
 &nbsp;&nbsp;&nbsp;&nbsp;| NonFatalError   
 &nbsp;&nbsp;&nbsp;&nbsp;| RetryableError**
 
-**type ErrorType**
+### **type ErrorType**
 ```elm
 type ErrorType
     = FatalError   
@@ -23,8 +23,12 @@ Error Types
 
 ---
 
-<span style="font-size: 115%; font-family: 'Courier New'"><span style="font-weight: bold"><span style="color: #1184CE;">errorTypeEncoder</span> : Utils.Error.ErrorType -> Json.Encode.Value</span></span>
+**errorTypeEncoder : Utils.Error.ErrorType -> Json.Encode.Value**
 
+### **errorTypeEncoder**
+```elm
+errorTypeEncoder : Utils.Error.ErrorType -> Json.Encode.Value
+```
 ErrorType encoder
 
 ---
