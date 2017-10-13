@@ -50,7 +50,7 @@ fact n =
 
 ### **(!!)**
 ```elm
-(!!) : List a -> Int -> Maybe.Maybe a
+(!!) : List a -> Int -> Maybe a
 ```
 
 Get item from List at index
@@ -75,7 +75,7 @@ first2 list =
 
 ### **(?=)**
 ```elm
-(?=) : Maybe.Maybe a -> a -> a
+(?=) : Maybe a -> a -> a
 ```
 
 Maybe with default operator.
@@ -99,7 +99,7 @@ y =
 
 ### **(?!=)**
 ```elm
-(?!=) : Maybe.Maybe a -> (() -> a) -> a
+(?!=) : Maybe a -> (() -> a) -> a
 ```
 
 Lazy version of ?= operator. (Since Elm is eager).
@@ -121,7 +121,7 @@ crashIfNothing =
 
 ### **(|?>)**
 ```elm
-(|?>) : Maybe.Maybe a -> (a -> b) -> Maybe.Maybe b
+(|?>) : Maybe a -> (a -> b) -> Maybe b
 ```
 
 Maybe.map operator
@@ -149,7 +149,7 @@ z =
 ```
 ### **(|?->)**
 ```elm
-(|?->) : Maybe.Maybe a -> ( b, a -> b ) -> b
+(|?->) : Maybe a -> ( b, a -> b ) -> b
 ```
 
 Maybe.map combined with Maybe.withDefault (or |?> combined with ?=)
@@ -170,7 +170,7 @@ y =
 
 ### **(|?!->)**
 ```elm
-(|?!->) : Maybe.Maybe a -> ( () -> b, a -> b ) -> b
+(|?!->) : Maybe a -> ( () -> b, a -> b ) -> b
 ```
 
 Lazy version of (|?->)
@@ -201,7 +201,7 @@ z =
 
 ### **(|?-->)**
 ```elm
-(|?-->) : Maybe.Maybe (Maybe.Maybe a) -> ( b, a -> b ) -> b
+(|?-->) : Maybe (Maybe a) -> ( b, a -> b ) -> b
 ```
 
 Double version of (|?->)
@@ -222,7 +222,7 @@ y =
 
 ### **(|?!-->)**
 ```elm
-(|?!-->) : Maybe.Maybe (Maybe.Maybe a) -> ( () -> b, a -> b ) -> b
+(|?!-->) : Maybe (Maybe a) -> ( () -> b, a -> b ) -> b
 ```
 
 Lazy version of (|?-->)
@@ -255,7 +255,7 @@ z =
 
 ### **(|?-->)**
 ```elm
-(|?-->) : Maybe.Maybe (Maybe.Maybe a) -> ( b, a -> b ) -> b
+(|?-->) : Maybe (Maybe a) -> ( b, a -> b ) -> b
 ```
 
 Double version of (|?->)
@@ -276,7 +276,7 @@ y =
 
 ### **(|?!-->)**
 ```elm
-(|?!-->) : Maybe.Maybe (Maybe.Maybe a) -> ( () -> b, a -> b ) -> b
+(|?!-->) : Maybe (Maybe a) -> ( () -> b, a -> b ) -> b
 ```
 
 Lazy version of (|?-->)
@@ -309,7 +309,7 @@ z =
 
 ### **(|?--->)**
 ```elm
-(|?--->) : Maybe.Maybe (Maybe.Maybe (Maybe.Maybe a)) -> ( b, a -> b ) -> b
+(|?--->) : Maybe (Maybe (Maybe a)) -> ( b, a -> b ) -> b
 ```
 
 Triple version of (|?->)
@@ -318,13 +318,13 @@ Triple version of (|?->)
 
 ### **(|?!--->)**
 ```elm
-(|?!--->) : Maybe.Maybe (Maybe.Maybe (Maybe.Maybe a)) -> ( () -> b, a -> b ) -> b
+(|?!--->) : Maybe (Maybe (Maybe a)) -> ( () -> b, a -> b ) -> b
 ```
 
 Lazy version of (|?--->)
 ### **(|?**>)**
 ```elm
-(|?**>) : ( Maybe.Maybe a, Maybe.Maybe b ) -> ( c, c, ( a, b ) -> c ) -> c
+(|?**>) : ( Maybe a, Maybe b ) -> ( c, c, ( a, b ) -> c ) -> c
 ```
 
 (|?->) for 2-tuple of Maybe's
@@ -349,7 +349,7 @@ z =
 
 ### **(|?!**>)**
 ```elm
-(|?!**>) : ( Maybe.Maybe a, Maybe.Maybe b ) -> ( () -> c, () -> c, ( a, b ) -> c ) -> c
+(|?!**>) : ( Maybe a, Maybe b ) -> ( () -> c, () -> c, ( a, b ) -> c ) -> c
 ```
 
 Lazy version of `(|?**>)`
@@ -383,7 +383,7 @@ z =
 
 ### **(|?***>)**
 ```elm
-(|?***>) : ( Maybe.Maybe a, Maybe.Maybe b, Maybe.Maybe c ) -> ( d, d, d, ( a, b, c ) -> d ) -> d
+(|?***>) : ( Maybe a, Maybe b, Maybe c ) -> ( d, d, d, ( a, b, c ) -> d ) -> d
 ```
 
 (|?->) for 3-tuple of Maybe's
@@ -392,7 +392,7 @@ z =
 
 ### **(|?!***>)**
 ```elm
-(|?!***>) : ( Maybe.Maybe a, Maybe.Maybe b, Maybe.Maybe c ) -> ( () -> d, () -> d, () -> d, ( a, b, c ) -> d ) -> d
+(|?!***>) : ( Maybe a, Maybe b, Maybe c ) -> ( () -> d, () -> d, () -> d, ( a, b, c ) -> d ) -> d
 ```
 
 Lazy version of `(|?***>)`
@@ -401,7 +401,7 @@ Lazy version of `(|?***>)`
 
 ### **(|?****>)**
 ```elm
-(|?****>) : ( Maybe.Maybe a, Maybe.Maybe b, Maybe.Maybe c, Maybe.Maybe d ) -> ( e, e, e, e, ( a, b, c, d ) -> e ) -> e
+(|?****>) : ( Maybe a, Maybe b, Maybe c, Maybe d ) -> ( e, e, e, e, ( a, b, c, d ) -> e ) -> e
 ```
 
 (|?->) for 4-tuple of Maybe's
@@ -410,7 +410,7 @@ Lazy version of `(|?***>)`
 
 ### **(|?!****>)**
 ```elm
-(|?!****>) : ( Maybe.Maybe a, Maybe.Maybe b, Maybe.Maybe c, Maybe.Maybe d ) -> ( () -> e, () -> e, () -> e, () -> e, ( a, b, c, d ) -> e ) -> e
+(|?!****>) : ( Maybe a, Maybe b, Maybe c, Maybe d ) -> ( () -> e, () -> e, () -> e, () -> e, ( a, b, c, d ) -> e ) -> e
 ```
 
 Lazy version of `(|?***>)`
@@ -420,7 +420,7 @@ Lazy version of `(|?***>)`
 
 ### **(|??>)**
 ```elm
-(|??>) : Result.Result a b -> (b -> c) -> Result.Result a c
+(|??>) : Result a b -> (b -> c) -> Result a c
 ```
 
 Result.map operator
@@ -455,7 +455,7 @@ g =
 
 ### **(??=)**
 ```elm
-(??=) : Result.Result err value -> (err -> value) -> value
+(??=) : Result err value -> (err -> value) -> value
 ```
 
 Simplified `Result.default` syntax.
@@ -487,7 +487,7 @@ g =
 ```
 ### **(|??->)**
 ```elm
-(|??->) : Result.Result a b -> ( a -> c, b -> c ) -> c
+(|??->) : Result a b -> ( a -> c, b -> c ) -> c
 ```
 
 Result.map combined with (??=) (or |??> combined with ??=)
@@ -511,7 +511,7 @@ b =
 
 ### **(|??-->)**
 ```elm
-(|??-->) : Result.Result a (Result.Result b c) -> ( a -> d, b -> d, c -> d ) -> d
+(|??-->) : Result a (Result b c) -> ( a -> d, b -> d, c -> d ) -> d
 ```
 
 Double version of (|?->)
@@ -539,7 +539,7 @@ b =
 ```
 ### **(|??**>)**
 ```elm
-(|??**>) : ( Result.Result x a, Result.Result x b ) -> ( x -> c, x -> c, ( a, b ) -> c ) -> c
+(|??**>) : ( Result x a, Result x b ) -> ( x -> c, x -> c, ( a, b ) -> c ) -> c
 ```
 
 (|??->) for 2-tuple of Results
@@ -574,7 +574,7 @@ sum =
 
 ### **(|??***>)**
 ```elm
-(|??***>) : ( Result.Result x a, Result.Result x b, Result.Result x c ) -> ( x -> d, x -> d, x -> d, ( a, b, c ) -> d ) -> d
+(|??***>) : ( Result x a, Result x b, Result x c ) -> ( x -> d, x -> d, x -> d, ( a, b, c ) -> d ) -> d
 ```
 
 (|??->) for 3-tuple of Results
@@ -583,7 +583,7 @@ sum =
 
 ### **(|??****>)**
 ```elm
-(|??****>) : ( Result.Result x a , Result.Result x b , Result.Result x c , Result.Result x d ) -> ( x -> e, x -> e, x -> e, x -> e, ( a, b, c, d ) -> e ) -> e
+(|??****>) : ( Result x a , Result x b , Result x c , Result x d ) -> ( x -> e, x -> e, x -> e, x -> e, ( a, b, c, d ) -> e ) -> e
 ```
 
 (|??->) for 4-tuple of Results
