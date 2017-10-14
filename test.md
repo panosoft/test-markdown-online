@@ -1,4 +1,3 @@
-[Back to README](../README.md)
 # Utils.Task
 
 Utility Task functions.
