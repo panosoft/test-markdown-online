@@ -1,4 +1,3 @@
-* [Back](..)
 # Utils.Task
 
 Utility Task functions.
